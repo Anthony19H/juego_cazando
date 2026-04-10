@@ -40,7 +40,7 @@ function iniciarJuego(){
     graficarComida()
 }
 
- iniciarJuego();
+
 
 function mover(direccion){
     if (direccion === "arriba") gatoY -= VELOCIDAD;     
