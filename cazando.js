@@ -63,7 +63,27 @@ function moverIzquierda(){
     graficarComida();
 }
 
-document.getElementById("btnArriba").onclick = () => mover("arriba");
-document.getElementById("btnAbajo").onclick = () => mover("abajo");
+function moverDerecha(){
+    gatoX+=10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
+function moverArriba(){
+    gatoY-=10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
+
+function moverAbajo(){
+    gatoY+=10;
+    limpiarCanvas();
+    graficarGato();
+    graficarComida();
+}
+
+document.getElementById("btnArriba").onclick = () => moverArriba();
+document.getElementById("btnAbajo").onclick = () => moverAbajo();
 document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
-document.getElementById("btnDerecha").onclick = () => mover("derecha");
+document.getElementById("btnDerecha").onclick = () => moverDerecha();
