@@ -9,10 +9,11 @@ const ANCHO_GATO= 50;
 const ALTO_GATO= 50;
 
 //comida
-let comidaX= 400;
-let comidaY= 400;
 const ANCHO_COMIDA= 30;
 const ALTO_COMIDA= 30;
+let comidaX= canvas.width-ANCHO_COMIDA;
+let comidaY= canvas.height-ALTO_COMIDA;
+
 
 //velocidad
 const VELOCIDAD = 15;
