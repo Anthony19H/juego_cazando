@@ -18,7 +18,7 @@ let comidaY= 0;
 //velocidad
 const VELOCIDAD = 15;
 
-
+let puntaje=0
 
 function graficarRectangulo(ejeX,ejeY,ancho,altura,color){
     ctx.fillStyle = color;
@@ -31,14 +31,14 @@ function graficarGato(){
 }
 
 function graficarComida() {
-    graficarRectangulo(comidaX,comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#ff0000");
+    graficarRectangulo(comidaX,comidaY,ALTO_COMIDA,ANCHO_COMIDA,"#f30202");
 };
 
 function iniciarJuego(){
     gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);     
     gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
-    comidaX= canvas.width-ANCHO_COMIDA;
-    comidaY= canvas.height-ALTO_COMIDA;
+    comidaX=generarAleatorio(0,canvas.width-ANCHO_COMIDA);
+    comidaY=generarAleatorio(0,canvas.width-ALTO_COMIDA);
     graficarGato()
     graficarComida()
 }
@@ -89,17 +89,24 @@ function moverAbajo(){
 }
 
 function detectarColision(){
-    if(gatoX < comidaX+ANCHO_COMIDA && 
-        gatoX + ANCHO_GATO > comidaX &&
-        gatoY < comidaY + ALTO_COMIDA && 
-        gatoY + ALTO_GATO > comidaY){
-            
+    if(gatoX < comidaX+ANCHO_COMIDA && gatoX + ANCHO_GATO > comidaX &&
+    gatoY < comidaY + ALTO_COMIDA && gatoY + ALTO_GATO > comidaY){
+        
         alert("Atrapada")
+        moverComida();
+        puntaje=puntaje+1;
+        mostrarEnSpan("puntos",puntaje)
+        limpiarCanvas();
+        graficarGato();
+        graficarComida();
     }
 
 }
 
-
+function moverComida(){
+    comidaX=generarAleatorio(0,canvas.width-ANCHO_COMIDA);
+    comidaY=generarAleatorio(0,canvas.width-ALTO_COMIDA);
+}
 document.getElementById("btnArriba").onclick = () => moverArriba();
 document.getElementById("btnAbajo").onclick = () => moverAbajo();
 document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
