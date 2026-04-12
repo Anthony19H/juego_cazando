@@ -20,6 +20,7 @@ const VELOCIDAD = 15;
 
 let puntaje=0;
 let tiempo=10;
+let intervalo;
 
 function graficarRectangulo(ejeX,ejeY,ancho,altura,color){
     ctx.fillStyle = color;
@@ -36,7 +37,8 @@ function graficarComida() {
 };
 
 function iniciarJuego(){
-    setInterval(restarTiempo,1000);
+    
+    intervalo=setInterval(restarTiempo,1000);
     gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);     
     gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
     comidaX=generarAleatorio(0,canvas.width-ANCHO_COMIDA);
@@ -94,9 +96,12 @@ function detectarColision(){
     if(gatoX < comidaX+ANCHO_COMIDA && gatoX + ANCHO_GATO > comidaX &&
     gatoY < comidaY + ALTO_COMIDA && gatoY + ALTO_GATO > comidaY){
         
-        alert("Atrapadaaaaaaa!!")
         moverComida();
         puntaje=puntaje+1;
+        if(puntaje == 6){
+            alert("ganador")
+            clearInterval(intervalo)
+        }
         mostrarEnSpan("puntos",puntaje)
         limpiarCanvas();
         graficarGato();
@@ -109,9 +114,24 @@ function moverComida(){
     comidaX=generarAleatorio(0,canvas.width-ANCHO_COMIDA);
     comidaY=generarAleatorio(0,canvas.width-ALTO_COMIDA);
 }
+
 function restarTiempo(){
     tiempo=tiempo-1
     mostrarEnSpan("tiempo",tiempo);
+    if (tiempo == 0){
+        clearInterval(intervalo);
+        alert("Game over")
+    }
+}
+
+function reiniciar(){
+    puntaje=0;
+    tiempo=10;
+    clearInterval(intervalo);
+    limpiarCanvas()
+    mostrarEnSpan("puntos",puntaje);
+    mostrarEnSpan("tiempo",tiempo);
+    iniciarJuego();
 }
 document.getElementById("btnArriba").onclick = () => moverArriba();
 document.getElementById("btnAbajo").onclick = () => moverAbajo();
