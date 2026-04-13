@@ -19,7 +19,7 @@ let comidaY= 0;
 const VELOCIDAD = 15;
 
 let puntaje=0;
-let tiempo=10;
+let tiempo=20;
 let intervalo;
 
 function graficarRectangulo(ejeX,ejeY,ancho,altura,color){
@@ -126,7 +126,7 @@ function restarTiempo(){
 
 function reiniciar(){
     puntaje=0;
-    tiempo=10;
+    tiempo=20;
     clearInterval(intervalo);
     limpiarCanvas()
     mostrarEnSpan("puntos",puntaje);
