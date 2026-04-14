@@ -1,0 +1,7 @@
+promt 1 
+Ya logré que mi juego se vea dentro de una Game Boy gris súper chida con puro código. 
+El problema es que ahora quiero ponerle una imagen pixel art en el fondo.
+
+promt 2
+a descargué una imagen de fondo pixel art a mi computadora y se llama fondo.png. 
+La tengo guardada en la misma carpeta donde tengo mi index.html y mi cazando.css.

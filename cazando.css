@@ -5,6 +5,13 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 20px;
+
+    /* --- ESTO ES LO NUEVO PARA LA IMAGEN --- */
+    background-image: url('fondo.jpg'); /* Pon aquí el nombre de tu archivo o link */
+    background-size: cover;                /* Estira la imagen para que llene la pantalla */
+    background-position: center;           /* Centra la imagen */
+    background-repeat: no-repeat;          /* No deja que la imagen se repita como mosaico */
+    background-attachment: fixed;          /* Hace que el fondo se quede quieto al bajar */
 }
 
 /* Cuerpo de la consola */
