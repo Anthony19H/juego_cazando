@@ -1,0 +1,9 @@
+promt 1
+Soy estudiante principiante primer nivel en desarrollo de software web , 
+acctua como nturor en programacion web , estoy desarrollando un taller un juego basico cazando comida, 
+necesito mejorar mi diseño CSS de mi proyecto
+
+promt 2
+Actúa como un desarrollador web. 
+Tengo un juego programado en JavaScript que usa un <canvas> de 500x500 píxeles. 
+Necesito que modifiques mi HTML y CSS para que toda la interfaz parezca una consola Game Boy clásica de color gris.

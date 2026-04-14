@@ -6,28 +6,35 @@
   <script src="utils.js"></script>
 </head>
 <body onload="iniciarJuego()">
-  <canvas id="areaJuego" width="500" height="500"></canvas>
-  <h1>Juego Cazando</h1>
-  <p>Autor: Anthony Herrera</p>
+    <div class="gameboy-body">
+        
+        <div class="screen-container">
+            <div class="screen-header">DOT MATRIX WITH STEREO SOUND</div>
+            <canvas id="areaJuego" width="500" height="500"></canvas>
+            
+            <div class="panel">
+                <span>PUNTOS: <span id="puntos">0</span></span>
+                <span>TIEMPO: <span id="tiempo">20</span></span>
+            </div>
+        </div>
 
-  
-  <div class="controles">
-    <button id="btnArriba">⬆</button>
-    <br>
-    <button id="btnIzquierda">⬅</button>
-    <button id="btnAbajo">⬇</button>
-    <button id="btnDerecha">➡</button>
-  </div>
-
-
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">20</span></span>
-  </div>
-<button onclick="reiniciar()">Reiniciar</button>
-  <p id="mensaje"></p>
-  
-
-  <script src="cazando.js"></script>
+        <div class="controles">
+            <div class="d-pad">
+                <button id="btnArriba" class="pad-btn up">▲</button>
+                <button id="btnIzquierda" class="pad-btn left">◀</button>
+                <button id="btnAbajo" class="pad-btn down">▼</button>
+                <button id="btnDerecha" class="pad-btn right">▶</button>
+                <div class="center-pad"></div>
+            </div>
+            
+            <div class="start-area">
+                <button onclick="reiniciar()" class="btn-start">REINICIAR</button>
+            </div>
+        </div>
+        
+        <p id="mensaje"></p>
+    </div>
+    
+    <script src="cazando.js"></script>
 </body>
 </html>
