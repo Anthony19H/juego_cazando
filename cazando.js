@@ -33,7 +33,7 @@ function graficarGato(){
 }
 
 function graficarComida() {
-    graficarRectangulo(comidaX,comidaY,ALTO_COMIDA,ANCHO_COMIDA,"#f30202");
+    graficarRectangulo(comidaX,comidaY,ALTO_COMIDA,ANCHO_COMIDA,"#85027e");
 };
 
 function iniciarJuego(){
@@ -74,7 +74,7 @@ function moverDerecha(){
 }
 function moverArriba(){
     if (gatoY>0){
-        gatoY-=10;
+        gatoY+=10;
         limpiarCanvas();
         graficarGato();
         graficarComida();
@@ -84,7 +84,7 @@ function moverArriba(){
 
 function moverAbajo(){
     if(gatoY<500-ALTO_GATO){
-    gatoY+=10;
+    gatoY-=10;
     limpiarCanvas();
     graficarGato();
     graficarComida();
@@ -122,7 +122,7 @@ function restarTiempo(){
     mostrarEnSpan("tiempo",tiempo);
     if (tiempo == 0){
         clearInterval(intervalo);
-        alert("Game over")
+        alert("Juego finalizado")
     }
 }
 
