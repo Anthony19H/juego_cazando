@@ -74,7 +74,7 @@ function moverDerecha(){
 }
 function moverArriba(){
     if (gatoY>0){
-        gatoY+=10;
+        gatoY-=10;
         limpiarCanvas();
         graficarGato();
         graficarComida();
@@ -84,7 +84,7 @@ function moverArriba(){
 
 function moverAbajo(){
     if(gatoY<500-ALTO_GATO){
-    gatoY-=10;
+    gatoY+=10;
     limpiarCanvas();
     graficarGato();
     graficarComida();
