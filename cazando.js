@@ -7,7 +7,8 @@ let gatoX= 0;
 let gatoY= 0;
 const ANCHO_GATO= 50;
 const ALTO_GATO= 50;
-
+const imagenGato = new Image();
+imagenGato.src = "gato.png";
 
 //comida
 const ANCHO_COMIDA= 30;
@@ -28,9 +29,9 @@ function graficarRectangulo(ejeX,ejeY,ancho,altura,color){
     ctx.fillRect(ejeX,ejeY,ancho,altura)
 }
 
-function graficarGato(){
-    graficarRectangulo(gatoX,gatoY,ALTO_GATO,ANCHO_GATO,"#000000");
-    
+function graficarGato() {
+    // drawImage recibe: (imagen, x, y, ancho, alto)
+    ctx.drawImage(imagenGato, gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
 }
 
 function graficarComida() {
