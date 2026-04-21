@@ -19,7 +19,7 @@ let comidaY= 0;
 const VELOCIDAD = 15;
 
 let puntaje=0;
-let tiempo=10;
+let tiempo=15;
 let intervalo;
 
 function graficarRectangulo(ejeX,ejeY,ancho,altura,color){
@@ -96,7 +96,7 @@ function detectarColision(){
     if(gatoX < comidaX+ANCHO_COMIDA && gatoX + ANCHO_GATO > comidaX &&
     gatoY < comidaY + ALTO_COMIDA && gatoY + ALTO_GATO > comidaY){
 
-        tiempo=10;
+        
         mostrarEnSpan("tiempo",tiempo);
         moverComida();
         puntaje=puntaje+1;
@@ -128,7 +128,7 @@ function restarTiempo(){
 
 function reiniciar(){
     puntaje=0;
-    tiempo=10;
+    tiempo=15;
     clearInterval(intervalo);
     limpiarCanvas()
     mostrarEnSpan("puntos",puntaje);
