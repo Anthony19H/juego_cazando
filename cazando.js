@@ -15,7 +15,8 @@ const ANCHO_COMIDA= 30;
 const ALTO_COMIDA= 30;
 let comidaX= 0;
 let comidaY= 0;
-
+const imagenComida = new Image();
+imagenComida.src = "raton.png";
 
 //velocidad
 const VELOCIDAD = 15;
@@ -35,8 +36,9 @@ function graficarGato() {
 }
 
 function graficarComida() {
-    graficarRectangulo(comidaX,comidaY,ALTO_COMIDA,ANCHO_COMIDA,"#85027e");
-};
+    // Reemplazamos graficarRectangulo por drawImage
+    ctx.drawImage(imagenComida, comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
+}
 
 function iniciarJuego(){
     
