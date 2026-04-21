@@ -96,7 +96,7 @@ function detectarColision(){
     if(gatoX < comidaX+ANCHO_COMIDA && gatoX + ANCHO_GATO > comidaX &&
     gatoY < comidaY + ALTO_COMIDA && gatoY + ALTO_GATO > comidaY){
 
-        
+        tiempo = 15;
         mostrarEnSpan("tiempo",tiempo);
         moverComida();
         puntaje=puntaje+1;
