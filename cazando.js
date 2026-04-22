@@ -22,6 +22,7 @@ imagenComida.src = "raton.png";
 const VELOCIDAD = 15;
 
 let puntaje=0;
+let tiempoLimite = 15
 let tiempo=15;
 let intervalo;
 
@@ -100,7 +101,13 @@ function detectarColision(){
     if(gatoX < comidaX+ANCHO_COMIDA && gatoX + ANCHO_GATO > comidaX &&
     gatoY < comidaY + ALTO_COMIDA && gatoY + ALTO_GATO > comidaY){
 
-        tiempo = 15;
+        if (tiempoLimite > 2) { 
+            tiempoLimite = tiempoLimite - 1;
+        }
+
+        
+        tiempo = tiempoLimite;
+        
         mostrarEnSpan("tiempo",tiempo);
         moverComida();
         puntaje=puntaje+1;
@@ -133,6 +140,7 @@ function restarTiempo(){
 function reiniciar(){
     puntaje=0;
     tiempo=15;
+    tiempoLimite = 15;
     clearInterval(intervalo);
     limpiarCanvas()
     mostrarEnSpan("puntos",puntaje);
